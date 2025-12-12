@@ -1,0 +1,23 @@
+﻿@using Radzen
+<!DOCTYPE html>
+<html lang="en">
+@{
+        string radzenVersion = typeof(Colors).Assembly.GetName().Version?.ToString() ?? "0.0.0.0";
+}
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <base href="/" />
+    <link rel="stylesheet" href="app.css" />
+    <link rel="stylesheet" href="RadzenCalendarIssue.styles.css" />
+    <link href="@($"_content/Radzen.Blazor/css/material-base.css?v={radzenVersion}")" rel="stylesheet" />
+    <HeadOutlet @rendermode="InteractiveServer" />
+</head>
+
+<body>
+    <Routes @rendermode="InteractiveServer" />
+    <script src="_framework/blazor.web.js"></script>
+    <script src="@($"_content/Radzen.Blazor/Radzen.Blazor.js?v={typeof(Colors).Assembly.GetName().Version}")"></script>
+</body>
+
+</html>
